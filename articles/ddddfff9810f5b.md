@@ -17,27 +17,27 @@ https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/what-is-amazon-c
 
 # 調べていてつまずいたこと
 
-振り返るとそんなに難しいことではない気もしますが、初見だと以下のようなことを疑問を持ちました。
+振り返るとそんなに難しいことではない気もしますが、初見だと以下のようなことに疑問を持ちました。
 
 :::details Cognitoを調べるとAmplifyとセットになって紹介してる記事がたくさんあり、Amplifyとは？AmplifyとCognitoってどういう関係？
 
 - Amplifyは、アプリケーションを作るために必要なサービス群（たとえばホスティングや認証やストレージ、バックエンドのAPIなど）をいい感じにまとめて提供してくれるAWSの仕組みです。その仕組みの中で、認証だとCognitoが使われているので、Cognitoを調べるとAmplifyの情報もたくさん出てきた感じでした。Amplifyと合わせてCognitoを使った場合も、Cognito単独で使った場合も、Cognito自体の認証の仕組みは変わらないです。
 :::
 
-:::details ユーザープールとは？Cognitoの知識だったり、対応してるユースケースで今回はどのケース？
+:::details ユーザープールとは？対応してるユースケース多そうだけど、今回はどのケースに当てはまる？などのCognito自体の知識
 
 - ユーザープールは、ユーザーを管理する仕組みです。ユーザー登録したり、ログインするときに使います。
-- 概要を理解するにあたって、図が多くてこの資料がわかりやすかったです。
+- 基本はやはりドキュメントですが、概要を理解するにあたって、図が多くてこの資料がわかりやすかったです。
   - https://d1.awsstatic.com/webinars/jp/pdf/services/20200630_AWS_BlackBelt_Amazon%20Cognito.pdf
 
 :::
 
 :::details フロントからCognitoのリソースを操作したいときに、使うライブラリ選定どんな感じがいいんだろう？next-auth？javascript用のsdk？
 
-- 最初よくわかってなくて、next-auth使えばいい感じにcognitoと連携できる？みたいに思っていましたが、今回のケースだとnext-authは使えませんでした。（Next.jsの構成が、バックエンドにnodeの環境はなく、SSGして配信するためパターンで、Next.jsのapi routeの機能が使えなくて利用できなそうでした）
+- 最初よくわかってなくて、next-auth使えばいい感じにcognitoと連携できる？みたいに思っていましたが、今回の僕のケースだとnext-authは使えませんでした。（Next.jsの構成が、バックエンドにnodeの環境はなく、SSGして配信するためパターンで、Next.jsのapi routeの機能が使えなくて利用できなそうでした）
 - next-authのドキュメント
   - https://next-auth.js.org/providers/cognito
-- JavaScriptのライブラリで、aws-amplifyというのがあり、これを使ってCognitoへのリソースの操作をするのが良さそうだった。（名前がamplifyとなっていたので、amplify使うときに使うライブラリと勘違いしましたが、Cognito単独で使う場合も利用可能です）
+- JavaScriptのライブラリで、aws-amplifyというのがあり、これを使ってCognitoへのリソースの操作をするのが良さそうでした。（名前がamplifyとなっていたので、amplify使うときに使うライブラリと勘違いしましたが、Cognito単独で使う場合も利用可能です）
 
 :::
 
@@ -198,7 +198,7 @@ Cognitoの概要を理解するために調べてた見つけた資料で、図�
 
 https://d1.awsstatic.com/webinars/jp/pdf/services/20200630_AWS_BlackBelt_Amazon%20Cognito.pdf
 
-今回Laravel側は実装しませんでしたが、バックエンドはこの記事がどうなってるかはこの記事が参考になりそうでした。
+今回Laravel側は実装しませんでしたが、バックエンドがどうなってるかはこの記事が参考になりそうでした。
 
 https://qiita.com/ggg-mzkr/items/25abba8d490b054fb00f
 
