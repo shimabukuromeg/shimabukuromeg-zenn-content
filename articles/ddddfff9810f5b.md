@@ -3,7 +3,7 @@ title: "はじめてのCognito"
 emoji: "📘"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["aws", "cognito"]
-published: false
+published: true
 ---
 
 最近になってはじめてCognitoを使う機会があったので、調べたことをまとめました。
