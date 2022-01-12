@@ -121,7 +121,7 @@ https://qiita.com/aws-warrior/items/58e317960cede9a23086
 
 https://docs.aws.amazon.com/ja_jp/cognito/latest/developerguide/signing-up-users-in-your-app.html
 
-Amplify Authメソッドで、承認コードなしでSingUpできないか探しているときに見つけたIssueです。管理系のメソッドをAuthでも使えるようにしてほしい、てきなIssueでしたが、管理系のメソッドは、ユースケース的にユーザー利用側のメソッドには必要ないっていうissueになっていました。
+Amplify Authメソッドで、承認コードなしでSingUpできないか探しているときに見つけたIssueです。管理系のメソッドをAuthでも使えるようにしてほしいと言った内容のIssueでしたが、管理系のメソッドは、ユースケース的にユーザー利用側のメソッドには必要ないっていうissueになっていました。
 
 https://github.com/aws-amplify/amplify-js/issues/2200
 
@@ -134,35 +134,35 @@ https://github.com/aws-amplify/amplify-js/issues/2200
 フロントからaws-amplifyを使ってCognitoへの認証を行うときに、トークンをリフレッシュする処理を書く必要があるのか、もしくはライブラリ側で実装してくれてるのか気になったので、処理を追ってみました。
 
 
-constructorでconfigureが呼ばれてる
+constructorでconfigureが呼ばれてます。
 
 https://github.com/aws-amplify/amplify-js/blob/main/packages/auth/src/Auth.ts#L117
 
-configureの中で CognitoUserPool がnewするときに、wrapRefreshSessionCallbackがわたされてる
+configureの中で CognitoUserPool がnewするときに、wrapRefreshSessionCallbackがわたされてます。
 
 https://github.com/aws-amplify/amplify-js/blob/main/packages/auth/src/Auth.ts#L196
 
-CognitoUserPool はamazon-cognito-identity-jsから呼ばれてる
+CognitoUserPool はamazon-cognito-identity-jsから呼ばれます。
 
 https://github.com/aws-amplify/amplify-js/blob/main/packages/auth/src/Auth.ts#L50
 
-CognitoUserPoolはCognitoUserがnewするときに呼ばれてる
+CognitoUserPoolはCognitoUserがnewするときに呼ばれます。
 
 https://github.com/aws-amplify/amplify-js/blob/main/packages/amazon-cognito-identity-js/src/CognitoUser.js#L82
 
-this.pool.wrapRefreshSessionCallbackは、refreshSessionの中で呼ばれてる
+this.pool.wrapRefreshSessionCallbackは、refreshSessionの中で呼ばれます。
 
 https://github.com/aws-amplify/amplify-js/blob/main/packages/amazon-cognito-identity-js/src/CognitoUser.js#L1458
 
-refreshSessionは、refreshSessionIfPossibleの中で呼ばれてる
+refreshSessionは、refreshSessionIfPossibleの中で呼ばれます。
 
 https://github.com/aws-amplify/amplify-js/blob/main/packages/amazon-cognito-identity-js/src/CognitoUser.js#L1229
 
-refreshSessionIfPossibleは、getUserDataの中で呼ばれてる
+refreshSessionIfPossibleは、getUserDataの中で呼ばれます。
 
 https://github.com/aws-amplify/amplify-js/blob/6882c5e6e8f1bff2206ff0de74cebbcf87efd622/packages/amazon-cognito-identity-js/src/CognitoUser.js#L1253
 
-getUserData 自体は、Auth.tsの中でいろんなんところで使われてそう。たとえば、currentUserPoolUserの中とか
+getUserDataは、Auth.tsの中でいろんなんところで使われてそうでした。たとえば、currentUserPoolUserの中とかです。
 
 https://github.com/aws-amplify/amplify-js/blob/6882c5e6e8f1bff2206ff0de74cebbcf87efd622/packages/auth/src/Auth.ts#L1305
 
@@ -186,7 +186,7 @@ https://dev.classmethod.jp/articles/re-introduction-2020-amazon-cognito/
 
 https://medium.com/@noid11/%E3%81%84%E3%81%BE%E3%81%95%E3%82%89-amazon-cognito-identity-sdk-for-javascript-amazon-cognito-identity-js-%E3%82%92%E4%BD%BF%E3%81%86%E6%96%B9%E6%B3%95-801957f40572
 
-つまづきポイント多すぎのところで同じようなことを思ったので、すごく参考になった。今回調べてた中で一番助かった記事でした。
+つまづきポイント多すぎ、のところで同じようなことを思ったので、大変参考になりました。今回調べてた中で一番助かった記事でした。
 
 https://zenn.dev/dove/articles/63494de652511c
 
