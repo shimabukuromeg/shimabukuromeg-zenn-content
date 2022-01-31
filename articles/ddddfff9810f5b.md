@@ -101,6 +101,10 @@ https://docs.amplify.aws/lib/auth/emailpassword/q/platform/js/
 
 https://docs.amplify.aws/lib/auth/manageusers/q/platform/js/
 
+APIリファレンス
+
+https://aws-amplify.github.io/amplify-js/api/classes/authclass.html#completenewpassword
+
 こちらが、Authのコードです。
 
 https://github.com/aws-amplify/amplify-js/blob/main/packages/auth/src/Auth.ts
