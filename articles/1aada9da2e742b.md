@@ -9,11 +9,11 @@ publication_name: "monicle"
 
 # はじめに
 
-Terraformのコードの読み方がよくわからなかなかったので、お勉強したことをまとめた記事です。（特にモジュールや全体的なコードの読み方）
-[ファイルとディレクトリ構成](https://www.terraform.io/language/files)、[モジュール](https://www.terraform.io/language/modules)、[変数](https://www.terraform.io/language/values/variables) あたりのドキュメントをしっかり読んだら一気に読みやすくなったので、この辺りを整理してまとめました。
+Terraformで書かれたコードの読み方が全体的によくわからなかなかったので、調べたことを整理してまとめた記事です。（特にモジュールや全体的なコードの読み方）
+[ファイルとディレクトリ構成](https://www.terraform.io/language/files)、[モジュール](https://www.terraform.io/language/modules)、[変数](https://www.terraform.io/language/values/variables) あたりのドキュメントをちゃんと読むと、モジュールの仕組みの理解が深まったので、整理してまとめました。
 アプリケーションエンジニアが Terraform のコード読んでインフラ構成を理解できるようになるぞ！！！が目標です。
 
-:::details 事前準備めも
+:::details 環境構築などの事前準備関連メモ
 
 手元の環境（Mac）でterraformを使う準備
 
