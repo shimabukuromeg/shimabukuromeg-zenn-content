@@ -12,7 +12,7 @@
   "dependencies": {
     "textlint-rule-preset-ja-spacing": "^2.3.0",
     "textlint-rule-preset-ja-technical-writing": "^10.0.1",
-    "zenn-cli": "^0.1.143"
+    "zenn-cli": "^0.1.150"
   },
   "devDependencies": {
     "textlint": "^13.4.1"
