@@ -34,5 +34,8 @@
       "forceAppendPeriod": true
     },
     "ja-technical-writing/sentence-length": false
+  },
+  "filters": {
+    "comments": true
   }
 }
